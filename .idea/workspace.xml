@@ -406,8 +406,6 @@
       <change beforePath="$PROJECT_DIR$/../Angular/IPS/Quotes-Angular/src/tslint.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Angular/IPS/Quotes-Angular/tsconfig.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Angular/IPS/Quotes-Angular/tslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../javatests" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../jumia-clone" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../moringaschool/bootstrap-3.3.7-dist/css/bootstrap-theme.css" beforeDir="false" />
@@ -539,7 +537,7 @@
           <entry key="Procfile" value="31" />
           <entry key="gradle" value="41" />
           <entry key="java" value="16" />
-          <entry key="md" value="141" />
+          <entry key="md" value="168" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -547,7 +545,7 @@
           <entry key="Groovy" value="41" />
           <entry key="JAVA" value="16" />
           <entry key="PLAIN_TEXT" value="31" />
-          <entry key="Specification" value="141" />
+          <entry key="Specification" value="168" />
         </counts>
       </usages-collector>
     </session>
@@ -587,8 +585,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+            <state>
+              <caret lean-forward="true" />
             </state>
           </provider>
         </entry>
@@ -1032,7 +1030,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556453900299" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556454188503" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -1065,7 +1063,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="683" y="25" width="683" height="743" extended-state="4" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
@@ -1076,7 +1073,7 @@
       <window_info content_ui="combo" id="Project" order="0" weight="0.41287285" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.3752039" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.3752039" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Build" weight="0.3284553" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1177,8 +1174,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+        <state>
+          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>

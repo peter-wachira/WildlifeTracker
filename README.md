@@ -22,14 +22,14 @@ An application that allows Rangers to track wildlife sightings in the area.
 
 ## SQL
 ```bash
-* 1.Launch postgres
-* 2.Type in psql
-* Run these commands
-* 3. CREATE DATABASE wildlife_tracker;
-* 4. \c wildlife_tracker;
-* 5. CREATE TABLE animals (id serial PRIMARY KEY, name varchar, health varchar, age varchar, type varchar);
-* 6. CREATE TABLE wildlife_tracker=# CREATE TABLE sightings (id serial PRIMARY KEY, animal_id int, location varchar, ranger_name varchar, timestamp timestamp);
-* 7. CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;
+1.Launch postgres
+2.Type in psql
+Run these commands
+3. CREATE DATABASE wildlife_tracker;
+4. \c wildlife_tracker;
+5. CREATE TABLE animals (id serial PRIMARY KEY, name varchar, health varchar, age varchar, type varchar);
+6. CREATE TABLE wildlife_tracker=# CREATE TABLE sightings (id serial PRIMARY KEY, animal_id int, location varchar, ranger_name varchar, timestamp timestamp);
+7. CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;
 ```
 ## User Requirements
 ```bash
