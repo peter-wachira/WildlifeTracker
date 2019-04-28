@@ -3,69 +3,75 @@ import static org.junit.Assert.*;
 import org.sql2o.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Arrays;
 
-public class AnimalTest {
+public class AnimalTest{
+
     @Rule
     public DatabaseRule database = new DatabaseRule();
 
+    private Animal testAnimal;
+
+    @Before
+    public void setup(){
+        testAnimal = new Animal("Lizard");
+    }
+
     @Test
-    public void animal_instantiatesCorrectly_false() {
-        Animal testAnimal = new Animal("Deer");
+    public void animal_instantiatesCorrectly_true() {
         assertEquals(true, testAnimal instanceof Animal);
     }
 
     @Test
-    public void getName_animalInstantiatesWithName_Deer() {
-        Animal testAnimal = new Animal("Deer");
-        assertEquals("Deer", testAnimal.getName());
+    public void getName_animalInstantiatesWithName_Orangutan() {
+        assertEquals("Lizard", testAnimal.getName());
     }
 
     @Test
-    public void equals_returnsTrueIfNameIsTheSame_false() {
-        Animal firstAnimal = new Animal("Deer");
-        Animal anotherAnimal = new Animal("Deer");
-        assertTrue(firstAnimal.equals(anotherAnimal));
+    public void getId_animalInstantiatesWithId(){
+        testAnimal.save();
+        assertTrue(testAnimal.getId() > 0);
     }
 
     @Test
-    public void save_assignsIdToObjectAndSavesObjectToDatabase() {
-        Animal testAnimal = new Animal("Deer");
+    public void equals_returnsTrueIfNamesAreTheSame() {
+        Animal anotherAnimal = new Animal("Lizard");
+        assertTrue(testAnimal.equals(anotherAnimal));
+    }
+
+    @Test
+    public void save_assignsIdToObject() {
         testAnimal.save();
         Animal savedAnimal = Animal.all().get(0);
         assertEquals(testAnimal.getId(), savedAnimal.getId());
     }
 
     @Test
+    public void save_insertsObjectIntoDatabase() {
+        testAnimal.save();
+        assertTrue(Animal.all().get(0).equals(testAnimal));
+    }
+
+    @Test
     public void all_returnsAllInstancesOfAnimal_false() {
-        Animal firstAnimal = new Animal("Deer");
-        firstAnimal.save();
-        Animal secondAnimal = new Animal("Black Bear");
-        secondAnimal.save();
-        assertEquals(true, Animal.all().get(0).equals(firstAnimal));
-        assertEquals(true, Animal.all().get(1).equals(secondAnimal));
+        testAnimal.save();
+        Animal otherAnimal = new Animal("Baboon");
+        otherAnimal.save();
+        assertEquals(true, Animal.all().get(0).equals(testAnimal));
+        assertEquals(true, Animal.all().get(1).equals(otherAnimal));
     }
 
     @Test
-    public void find_returnsAnimalWithSameId_secondAnimal() {
-        Animal firstAnimal = new Animal("Deer");
-        firstAnimal.save();
-        Animal secondAnimal = new Animal("Black Bear");
-        secondAnimal.save();
-        assertEquals(Animal.find(secondAnimal.getId()), secondAnimal);
+    public void find_returnsAnimalWithSameId() {
+        testAnimal.save();
+        Animal anotherAnimal = new Animal("Baboon");
+        anotherAnimal.save();
+        assertEquals(Animal.find(anotherAnimal.getId()), anotherAnimal);
     }
 
     @Test
-    public void delete_deletesAnimalFromDatabase_0() {
-        Animal testAnimal = new Animal("Deer");
+    public void delete_deletesAnimal() {
         testAnimal.save();
         testAnimal.delete();
         assertEquals(0, Animal.all().size());
     }
-
-    @Test
-    public void find_returnsNullWhenNoAnimalFound_null() {
-        assertTrue(Animal.find(999) == null);
-    }
-
 }

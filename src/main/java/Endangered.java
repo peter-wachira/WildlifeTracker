@@ -48,6 +48,7 @@ public class Endangered extends Animal {
         return false;
     }
 
+
     //Overriding save in animal class for  endangered  class
     @Override
     public void save() {
@@ -87,5 +88,6 @@ public class Endangered extends Animal {
                     .executeUpdate();
         }
     }
+
 
 }
