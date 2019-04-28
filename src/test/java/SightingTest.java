@@ -11,9 +11,10 @@ public class SightingTest{
     public DatabaseRule database = new DatabaseRule();
 
     private Sighting testSighting;
-
+    private Animal  testAnimal;
     @Before
     public void setUp() {
+        Animal testAnimal = new Animal("Deer");
         Timestamp now = new Timestamp(new Date().getTime());
         testSighting = new Sighting(1, "Zone A", "Kamau", now);
     }

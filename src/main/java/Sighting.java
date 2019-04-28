@@ -15,7 +15,7 @@ public class Sighting implements DatabaseManagement {
 
     // constructor for sighting which implements abstract method save in Database management class
 
-    public Sighting(int animal_id, String location, String ranger_name) {
+    public Sighting(int animal_id, String location, String ranger_name, Timestamp now) {
         if (ranger_name.equals("")) {
             throw new IllegalArgumentException("Please enter Ranger name.");
         }
