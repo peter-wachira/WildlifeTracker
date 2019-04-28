@@ -34,7 +34,7 @@ You can contact me at pwachira900@gmail.com
 ```
 
 ## License
-- This project is licensed under the MIT Open Source license Copyright (c) 2019. [Peter Wachira](https://github.com/peter-wachira/Hair-Salon/blob/master/LICENCE)
+- This project is licensed under the MIT Open Source license Copyright (c) 2019. [Peter Wachira](https://github.com/peter-wachira/WildlifeTracker/blob/master/LICENCE)
 
 [![forthebadge](https://forthebadge.com/images/badges/fuck-it-ship-it.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/makes-people-smile.svg)](https://forthebadge.com)
