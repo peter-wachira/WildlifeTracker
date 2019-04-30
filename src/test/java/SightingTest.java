@@ -14,10 +14,12 @@ public class SightingTest{
     private Animal  testAnimal;
     @Before
     public void setUp() {
-        Animal testAnimal = new Animal("Deer");
-        Timestamp now = new Timestamp(new Date().getTime());
-        testSighting = new Sighting(1, "Zone A", "Kamau", now);
+
+
+        testSighting = new Sighting(1, "Zone A", "Ronald");
     }
+
+
 
     @Test
     public void Sighting_instantiatesCorrectly() {
@@ -45,12 +47,11 @@ public class SightingTest{
     @Test
     public void getRangerName_sightingInstantiatesWithRangerName(){
         testSighting.save();
-        assertEquals("Kamau", testSighting.getRangerName());
+        assertEquals("Ronald", testSighting.getRangerName());
     }
     @Test
     public void equals_returnsTrueIfAllPropertiesAreTheSame() {
-        Timestamp rightNow = new Timestamp(new Date().getTime());
-        Sighting anotherSighting = new Sighting(1, "Zone A", "Kamau", rightNow);
+        Sighting anotherSighting = new Sighting(1, "Zone A", "Ronald");
         assertEquals(true, testSighting.equals(anotherSighting));
     }
 
@@ -68,10 +69,9 @@ public class SightingTest{
     }
 
     @Test
-    public void all_returnsAllInstancesOfSighting_false() {
+    public void all_returnsAllInstancesOfSighting_true() {
         testSighting.save();
-        Timestamp rightNow = new Timestamp(new Date().getTime());
-        Sighting otherSighting = new Sighting(1, "Zone B", "Ole Nkrumah", rightNow);
+        Sighting otherSighting = new Sighting(1, "Zone B",  "Baraka");
         otherSighting.save();
         assertEquals(true, Sighting.all().get(0).equals(testSighting));
         assertEquals(true, Sighting.all().get(1).equals(otherSighting));
@@ -80,8 +80,7 @@ public class SightingTest{
     @Test
     public void find_returnsSightingWithSameId_secondSighting() {
         testSighting.save();
-        Timestamp rightNow = new Timestamp(new Date().getTime());
-        Sighting otherSighting = new Sighting(1, "Zone B", "Ole Nkrumah", rightNow);
+        Sighting otherSighting = new Sighting(1, "Zone B",  "Daniels");
         otherSighting.save();
         assertEquals(Sighting.find(otherSighting.getId()), otherSighting);
     }

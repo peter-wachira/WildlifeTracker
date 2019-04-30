@@ -15,13 +15,14 @@ public class Sighting implements DatabaseManagement {
 
     // constructor for sighting which implements abstract method save in Database management class
 
-    public Sighting(int animal_id, String location, String ranger_name, Timestamp now) {
+    public Sighting(int animal_id, String location, String ranger_name) {
         if (ranger_name.equals("")) {
             throw new IllegalArgumentException("Please enter Ranger name.");
         }
         this.animal_id = animal_id;
         this.location = location;
         this.ranger_name = ranger_name;
+
         this.save();
     }
     //get methods
@@ -59,7 +60,7 @@ public class Sighting implements DatabaseManagement {
     @Override
     public void save() {
         String sql = "INSERT INTO sightings (animal_id, location, ranger_name, timestamp) VALUES (:animal_id, :location, :ranger_name, now());";
-
+        System.out.println("INSERT INTO sightings (animal_id, location, ranger_name, timestamp) VALUES (:animal_id, :location, :ranger_name, now());");
         try (Connection con = DB.sql2o.open()) {
             this.id = (int) con.createQuery(sql, true)
                     .addParameter("animal_id", this.animal_id)
@@ -91,8 +92,7 @@ public class Sighting implements DatabaseManagement {
         }
     }
 
-    //Overriding Sighting
-    @Override
+    //Overriding sighting
     public boolean equals(Object otherSighting){
         if(!(otherSighting instanceof Sighting)){
             return false;
@@ -118,7 +118,8 @@ public class Sighting implements DatabaseManagement {
     //implement method delete() from Database management class
     public void delete(){
         try(Connection con = DB.sql2o.open()) {
-            con.createQuery("DELETE FROM sightings WHERE id=:id")
+            String sql = "DELETE FROM sightings WHERE id=:id;";
+            con.createQuery(sql)
                     .addParameter("id",id)
                     .executeUpdate();
         }
@@ -126,7 +127,7 @@ public class Sighting implements DatabaseManagement {
 
     //update the Sightings table && throwing an exception incase the id is not mapped
     public void update() {
-        String sql = "UPDATE sightings SET location = :location, ranger_name = :rangername WHERE id = :id";
+        String sql = "UPDATE sightings SET location = :location, ranger_name = :ranger_name WHERE id = :id";
 
         try(Connection con = DB.sql2o.open()) {
             con.createQuery(sql)

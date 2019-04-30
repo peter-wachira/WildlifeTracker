@@ -4,16 +4,20 @@ import org.sql2o.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class AnimalTest{
 
     @Rule
     public DatabaseRule database = new DatabaseRule();
 
     private Animal testAnimal;
+    private Endangered testEndangered;
 
     @Before
     public void setup(){
-        testAnimal = new Animal("Lizard");
+        testAnimal = new Animal("Monkey");
+        testEndangered =new Endangered("Zebra","Healthy","Young");
+
     }
 
     @Test
@@ -23,7 +27,7 @@ public class AnimalTest{
 
     @Test
     public void getName_animalInstantiatesWithName_Orangutan() {
-        assertEquals("Lizard", testAnimal.getName());
+        assertEquals("Monkey", testAnimal.getName());
     }
 
     @Test
@@ -33,8 +37,23 @@ public class AnimalTest{
     }
 
     @Test
+    public void getAge_animalInstantiatesWithAge_Young() {
+        assertEquals("Young", testEndangered.getAge());
+    }
+
+    @Test
+    public void getHealth_animalInstantiatesWithHealth_Healthy() {
+        assertEquals("Healthy", testEndangered.getHealth());
+    }
+
+    @Test
+    public void getType_animalInstantiatesWithType_Type() {
+        assertEquals("Non-endangered", testAnimal.getType());
+    }
+
+    @Test
     public void equals_returnsTrueIfNamesAreTheSame() {
-        Animal anotherAnimal = new Animal("Lizard");
+        Animal anotherAnimal = new Animal("Monkey");
         assertTrue(testAnimal.equals(anotherAnimal));
     }
 
@@ -54,7 +73,7 @@ public class AnimalTest{
     @Test
     public void all_returnsAllInstancesOfAnimal_false() {
         testAnimal.save();
-        Animal otherAnimal = new Animal("Baboon");
+        Animal otherAnimal = new Animal("Deer");;
         otherAnimal.save();
         assertEquals(true, Animal.all().get(0).equals(testAnimal));
         assertEquals(true, Animal.all().get(1).equals(otherAnimal));
@@ -63,7 +82,7 @@ public class AnimalTest{
     @Test
     public void find_returnsAnimalWithSameId() {
         testAnimal.save();
-        Animal anotherAnimal = new Animal("Baboon");
+        Animal anotherAnimal = new Animal("Deer");
         anotherAnimal.save();
         assertEquals(Animal.find(anotherAnimal.getId()), anotherAnimal);
     }

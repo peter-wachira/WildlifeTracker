@@ -22,7 +22,7 @@ dependencies {
     compile group: 'org.slf4j', name : 'slf4j-api', version: '1.7.2'
     compile group: 'org.sql2o', name: 'sql2o', version: '1.5.4'
     compile group: 'org.postgresql', name: 'postgresql', version: "9.4-1201-jdbc41"
-    compile group: 'org.slf4j', name : 'slf4j-api', version: '1.7.2'
+    compile group: 'org.slf4j', name : 'slf4j-simple', version: '1.7.21'
 }
 defaultTasks = ['clean']
 task stage(dependsOn: ['clean', 'installDist'])

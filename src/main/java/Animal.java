@@ -16,6 +16,7 @@ public class Animal {
             throw new IllegalArgumentException("Please enter an animal name.");
         }
         this.name = name;
+
         type = ANIMAL_TYPE;
     }
 
