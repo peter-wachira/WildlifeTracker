@@ -14,6 +14,7 @@ An application that allows Rangers to track wildlife sightings in the area.
 - [Installation](#Installation)
 - [SQL](#SQL)
 - [Tests](#Tests)
+- [Live Demo](#Tests)
 - [Requirements](#Requirements)
 - [Known Bugs](#Requirements)
 - [Extras](#extras)
@@ -29,6 +30,11 @@ An application that allows Rangers to track wildlife sightings in the area.
 ## Installation
 * `git clone <https://github.com/peter-wachira/WildlifeTracker.git>` this repository
 * `cd WildlifeTracker`
+
+
+## Live Demo
+To view the page click on the link below
+ [https://gentle-fortress-49119.herokuapp.com/](*)
 
 ## Tests
 
