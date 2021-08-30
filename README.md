@@ -30,7 +30,7 @@ An application that allows Rangers to track wildlife sightings in the area.
 
 ## Tests
 
-- To run test, run files under tests/java package for DatabaseRule, Doctor, Receipient Donor tests 
+- To run test, run files under tests/java package 
 
 
 ## SQL
