@@ -15,7 +15,9 @@ An application that allows Rangers to track wildlife sightings in the area.
 - [SQL](#SQL)
 - [Tests](#Tests)
 - [Requirements](#Requirements)
+- [Known Bugs](#Requirements)
 - [Extras](#extras)
+
 
 
 ## Technologies Used
